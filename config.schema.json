@@ -97,12 +97,18 @@
               "type": "integer",
               "title": "API Port",
               "placeholder": "40810",
-              "description": "The port that the API (if enabled) runs on. Defaults to 40810, please change this setting of the port is already in use."
+              "description": "The port that the API (if enabled) runs on. Defaults to 40810, please change this setting of the port is already in use.",
+              "condition": {
+                "functionBody": "return model.isApiEnabled === true;"
+              }
             },
             "apiToken": {
               "type": "string",
               "title": "API Token",
-              "description": "The token that has to be included in each request of the API. Is required if the API is enabled and has no default value."
+              "description": "The token that has to be included in each request of the API. Is required if the API is enabled and has no default value.",
+              "condition": {
+                "functionBody": "return model.isApiEnabled === true;"
+              }              
             },
             "zones": {
                 "type": "array",
